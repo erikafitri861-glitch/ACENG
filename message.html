@@ -41,18 +41,20 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const colors = ["#ff6b81", "#ffd93d", "#52b6ff", "#9b5cff", "#ff8c69"];
-        const count = 40;
+        const count = 80;
         for (let i = 0; i < count; i += 1) {
           const confetti = document.createElement("div");
           confetti.className = "confetti-piece";
           const size = Math.floor(Math.random() * 10) + 8;
           confetti.style.width = `${size}px`;
-          confetti.style.height = `${size * 0.4}px`;
+          confetti.style.height = `${Math.max(3, size * 0.35)}px`;
           confetti.style.backgroundColor =
             colors[Math.floor(Math.random() * colors.length)];
           confetti.style.left = `${Math.random() * 100}%`;
           confetti.style.animationDelay = `${Math.random() * 1.2}s`;
-          confetti.style.opacity = "0.9";
+          confetti.style.animationDuration = `${1.8 + Math.random() * 1.2}s`;
+          confetti.style.opacity = `${0.7 + Math.random() * 0.3}`;
+          confetti.style.borderRadius = "2px";
           document.getElementById("confetti-wrap").appendChild(confetti);
         }
 

@@ -1,8 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #f0f8ff;
   font-family: "Arial", sans-serif;
   text-align: center;
-  padding: 50px;
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 h1 {
@@ -127,9 +140,39 @@ button:hover {
   20% {
     opacity: 1;
   }
+  60% {
+    opacity: 1;
+  }
   100% {
     opacity: 0;
-    transform: translateY(120vh) rotate(720deg);
+    transform: translateY(120vh) translateX(30px) rotate(720deg);
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .audio-wrapper {
+    max-width: 100%;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px 16px;
   }
 }
 
